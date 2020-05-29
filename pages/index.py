@@ -16,14 +16,11 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Can we
+            ## Can we predict unemployment in the United States?
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
-
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
-
+            How people decide upon their careers has always been a fascinating topic for me.  
+            More interesting though is how that decision, their ethnicity, education or even location impact employment.  
+            I welcomed the daunting task to predict employment status of an individual United States.  
             """
         ),
         dcc.Link(dbc.Button('Try it Out!', color='primary'), href='/predictions')
