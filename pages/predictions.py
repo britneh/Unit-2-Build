@@ -1,3 +1,5 @@
+from joblib import load
+pipeline = load('assets/pipeline.joblib')
 # Imports from 3rd party libraries
 import dash
 import dash_bootstrap_components as dbc
@@ -17,7 +19,7 @@ column1 = dbc.Col(
         
             ## Predictions
 
-            Your instructions: How to use your app to get new predictions.
+            Input your demographics to predict your employment status. 
 
             """
         ),
@@ -26,9 +28,26 @@ column1 = dbc.Col(
 )
 
 column2 = dbc.Col(
-    [
-
-    ]
+    [dcc.Markdown('#### Industry'), 
+        dcc.Dropdown(
+            id='Industry', 
+            options = [
+                {'label': 'Professional and business services', 'value': 'Professional and business services'}, 
+                {'label': 'Educational and health services', 'value': 'Educational and health services'}, 
+                {'label': 'Public administration', 'value': 'Public administration'}, 
+                {'label': 'Leisure and hospitality', 'value': 'Leisure and hospitality'}, 
+                {'label': 'Manufacturing', 'value': 'Manufacturing'}, 
+                {'label': 'Trade', 'value': 'Trade'}, 
+                {'label': 'Financial', 'value': 'Financial'}, 
+                {'label': 'Construction', 'value': 'Construction'},
+                {'label': 'Other', 'value': 'Other'},
+                {'label': 'Transportation and utilities ', 'value': 'Transportation and utilities '},
+            ], 
+            value = 'Africa', 
+            className='mb-5', 
+        ), 
+    ],
+    md=4,
 )
 
 layout = dbc.Row([column1, column2])
